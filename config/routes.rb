@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'map/index'
+
+  resources :data
+  get 'fire_ant/home'
+
+  get 'fire_ant/about'
+
   get  'static_pages/home'
   get  'static_pages/help'
   get  'static_pages/about'
