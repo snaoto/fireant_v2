@@ -27,7 +27,7 @@
         <script type="text/javascript">
             var WatchID;            // Object of "watchPosition"
             var WatchLoopCnt = 0;   // Counter to stop watching
-            var WatchLoopMax = 30;  // No. of counting to stop watching
+            var WatchLoopMax = 0;  // No. of counting to stop watching
             var MapTime;            // Time when map was last updated
             var MapUpTime = 3;      // Temporal interval to update the map
 
@@ -50,12 +50,12 @@
                 // --- Control for displaying results -------------------------------------------------------------------
                 WatDisplayCtrl('OK');
 
-                console.log(argPos.coords.latitude);
-                console.log(argPos.coords.longitude);
-                console.log("");
+                // console.log(argPos.coords.latitude);
+                // console.log(argPos.coords.longitude);
+                // console.log("");
 
                 markerParams = {latitude:argPos.coords.latitude , longitude:argPos.coords.longitude}
-                markerParams['title'] = 'testetsttest';
+                //markerParams['title'] = 'testetsttest';
                 // $.ajax({
                 //   url: '/users',
                 //   type: 'POST',
@@ -178,11 +178,6 @@
         //=========================================================
         function MapUpdate(argLatitude , argLongitude , argFlg){
             console.log(argLatitude, argLatitude, argFlg);
-            // Load the map
-            //<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true">
-            //<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvTJh0c0yKakfJi0Ju2zPklH6Plv37P8&callback=initMap">
-            //<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvTJh0c0yKakfJi0Ju2zPklH6Plv37P8&callback=initMap">
-
 
             // --- Check the frequency of updating the map ------------------------------------------------------------------
             if((typeof MapTime) === 'object'){
@@ -198,11 +193,11 @@
             var wCenterPos = new google.maps.LatLng(argLatitude , argLongitude);
 
             // --- オプション編集 --------------------------------------------------------------------------
-            var wOptions = {
-                zoom: 16,                                 // ズーム率
-                center: wCenterPos,                       // 地図中央の座標
-                //mapTypeId: google.maps.MapTypeId.ROADMAP  // 通常の地図
-            };
+            // var wOptions = {
+            //     zoom: 16,                                 // ズーム率
+            //     center: wCenterPos,                       // 地図中央の座標
+            //     //mapTypeId: google.maps.MapTypeId.ROADMAP  // 通常の地図
+            // };
 
             // --- GoogleMapを表示 -------------------------------------------------------------------------
             //var wGoogleMap = new google.maps.Map(document.getElementById('map'), wOptions);
@@ -210,35 +205,42 @@
 
 
             // --- 座標にマーカーを付ける ------------------------------------------------------------------
+            document.getElementById('latitude').value = null
+            document.getElementById('longitude').value = null
             var wMarker = new google.maps.Marker({
                                                  position: wCenterPos,
                                                  map: map
+                                                 title: "あなたの現在地",
+                                                 draggable: true
                                                  });
+                                                 map.panTo(wCenterPos);
+                                                 map.setZoom(15);
+
+                                                 // マーカーのドロップ（ドラッグ終了）時のイベント
+                                                 google.maps.event.addListener( wMarker, 'dragend', function(ev){
+                                                                               // イベントの引数evの、プロパティ.latLngが緯度経度。
+                                                                               document.getElementById('latitude').value = ev.latLng.lat();
+                                                                               document.getElementById('longitude').value = ev.latLng.lng();
+                                                                               });
+                                                                               document.getElementById("goFetchPos").style.visibility = "hidden";
+
         }
+        // ONLOADイベントにセット
+        window.onload = init();
 
             </script>
-
-
 
     </head>
 
     <!-- Define Body (background color) =============-->
     <body bgcolor="white">
 
-
-        <!-- Show Title -->
-        <table width="100%">
-            <tr><td bgcolor="#c20074">
-                <font size=8 color="#f3f3f3">　ヒアリを発見！</font>
-            </td></tr>
-        </table>
-
         <div id="watErrMsg"></div>
 
         <!-- Show Decoration =============-->
         <p>&nbsp;</p>
 
-        <marquee direction="right" width = "800">
+        <marquee direction="right" width = "1001">
           <%= image_tag 'ant.png'%>
            <!--img src = "ant.png"-->
          </marquee>
@@ -260,20 +262,16 @@
                           <% end %>
                         ]
 
-//                        var data = [
-//                                    {name: 'Tokyo',lat: 36,lng: 136},
-//                                    {name: 'Hyogo',lat: 35,lng: 135}
-//                                    ]
                                     map = new google.maps.Map(document.getElementById('map'), {
                                                               zoom: 6,
                                                               center: center
                                                               });
 
                                                               // Create a <script> tag and set the USGS URL as the source.
-                                                              var script = document.createElement('script');
+                                                              //var script = document.createElement('script');
                                                               // This example uses a file on ujilab.org
-                                                              script.src = 'https://ujilab.org/wp/wp-content/uploads/2017/12/pointdata_test20171201-3.js';
-                                                              document.getElementsByTagName('head')[0].appendChild(script);
+                                                              //script.src = 'https://ujilab.org/wp/wp-content/uploads/2017/12/pointdata_test20171201-3.js';
+                                                              //document.getElementsByTagName('head')[0].appendChild(script);
 
                                                               marker = new google.maps.Marker({
                                                                                               position: center,
@@ -289,16 +287,16 @@
                     }
 
                 /* show red points according to the database.*/
-                window.fafeed_callback = function(results) {
-                    for (var i = 0; i < results.features.length; i++) {
-                        var coords = results.features[i].geometry.coordinates;
-                        var latLng = new google.maps.LatLng(coords[1],coords[0]);
-                        var marker = new google.maps.Marker({
-                                                            position: latLng,
-                                                            map: map
-                                                            });
-                    }
-                }
+                // window.fafeed_callback = function(results) {
+                //     for (var i = 0; i < results.features.length; i++) {
+                //         var coords = results.features[i].geometry.coordinates;
+                //         var latLng = new google.maps.LatLng(coords[1],coords[0]);
+                //         var marker = new google.maps.Marker({
+                //                                             position: latLng,
+                //                                             map: map
+                //                                             });
+                //     }
+                // }
 
                 </script>
 
