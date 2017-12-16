@@ -1,0 +1,25 @@
+
+
+button.button {
+    /* 文字サイズを1.4emに指定 */
+    font-size: 2.5em;
+
+    /* 文字の太さをboldに指定 */
+    font-weight: bold;
+
+    /* 余白を指定 */
+    padding: 20px 200px;
+
+    /* 背景色を濃い青色に指定 */
+    background-color: chocolate;
+
+    /* 文字色を白色に指定 */
+    color: #fff;
+
+    /* ボーダーをなくす */
+    border-style: none;
+ 
+    border-radius: 25px 25px;
+    -webkit-border-radius: 25px 25px;
+    -moz-border-radius: 25px 25px;
+}

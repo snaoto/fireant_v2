@@ -3,6 +3,7 @@
     <!-- Define Style =============-->
     <head>
         <meta charset="UTF-8">
+          <LINK rel="stylesheet" href="main.css" type="text/css">
         <style>
             #map {
                 height: 400px;
@@ -16,6 +17,8 @@
             padding: 0;
         }
         </style>
+
+
 
         <!-- Add Title on the Browser Tab =============-->
         <title>FireAntEradicator</title>
@@ -70,8 +73,8 @@
                     document.getElementById("watDate").innerHTML += '<br><span style="color:blue">位置の追跡を停止しました。</span>';
                 }
             }
-            console.log(argPos.coords.latitude);
-            console.log(argPos.coords.longitude);
+//            console.log(argPos.coords.latitude);
+//            console.log(argPos.coords.longitude);
 
             function CreateMarker(argPos){
               markerParams['description'] = $("#description").val();
@@ -222,6 +225,7 @@
     <!-- Define Body (background color) =============-->
     <body bgcolor="white">
 
+
         <!-- Show Title -->
         <table width="100%">
             <tr><td bgcolor="#c20074">
@@ -232,13 +236,13 @@
         <div id="watErrMsg"></div>
 
         <!-- Show Decoration =============-->
-        <marquee direction="right" width = "800"> <img src = "ant.png"> </marquee>
-        <marquee direction="right" scrolldelay="170" width = "800"> <img src = "ant.png"> </marquee>
+        <p>&nbsp;</p>
 
-        <!-- Show Sentence =============-->
-        <font size ="3">
-            <p> 報告結果を確認しよう！ </p>
-        </font>
+        <marquee direction="right" width = "800">
+          <%= image_tag 'ant.png'%>
+           <!--img src = "ant.png"-->
+         </marquee>
+
 
         <!-- Show Map =============-->
         <form>
@@ -304,11 +308,22 @@
 
             </center>
 
-            <div class="PosWatButton">
+            <!--div class="PosWatButton">
                 <div id="goFetchPos">
                     <input value="現在地特定" onclick="PosWatch();" type="button">
-                        </div>
+                  </div-->
+
             </div>
+
+            <center>
+
+            <p>&nbsp;</p>
+
+
+                          <button type="button" class="button" onclick="PosWatch();">ヒアリを発見した！</button>
+
+            </center>
+
 
             <div id="watOut-area">
                 <div id="watOut-err-area">
@@ -333,7 +348,23 @@
 
 
             <!-- Show Comment Form =============-->
-            <font face = "Comic Sans MS" size="6">投稿してみよう！！！！</font><br>
+
+        <center>
+        <p>&nbsp;</p>
+
+          <input type="button" value="ヒアリについて知りたい" onclick="location.href='https://sites.google.com/site/iussijapan/fireant'" style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:chocolate;color:white;">
+        </center>
+
+
+                <p>&nbsp;</p>
+                <font face = "Comic Sans MS" size="6">投稿してみよう！！</font><br>
+
+            <h2>ヒアリ防除システムとは？</h2>
+            <h5>ヒアリを発見を共有して、ヒアリの侵入状況を提供するシステムです。</h5>
+
+            <h2>登録しよう！</h2>
+            <h5>発見情報の登録は、誰でも利用できます。位置情報から発見場所、日時が自動的に登録できます。</h5>
+
 
             <!-- Show Input Buttons =============-->
             <h5>どこにいた？</h5>
