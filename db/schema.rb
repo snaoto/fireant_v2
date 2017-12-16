@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215055422) do
+ActiveRecord::Schema.define(version: 20171215025904) do
 
   create_table "data", force: :cascade do |t|
     t.decimal "altitude"
