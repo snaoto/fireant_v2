@@ -3,6 +3,7 @@
     <!-- Define Style =============-->
     <head>
         <meta charset="UTF-8">
+          <LINK rel="stylesheet" href="main.css" type="text/css">
         <style>
             #map {
                 height: 400px;
@@ -16,6 +17,13 @@
             padding: 0;
         }
         </style>
+
+
+        <table width="90%">
+          <tr><td bgcolor="#20b2aa">
+            <font size=6 color="#f3f3f3">　ヒアリの防除</font>
+          </td></tr>
+        </table>
 
         <!-- Add Title on the Browser Tab =============-->
         <title>FireAntEradicator</title>
@@ -222,6 +230,7 @@
     <!-- Define Body (background color) =============-->
     <body bgcolor="white">
 
+
         <!-- Show Title -->
         <table width="100%">
             <tr><td bgcolor="#c20074">
@@ -232,7 +241,10 @@
         <div id="watErrMsg"></div>
 
         <!-- Show Decoration =============-->
-        <marquee direction="right" width = "800"> <img src = "ant.png"> </marquee>
+        <marquee direction="right" width = "800">
+          <%= image_tag 'ant.png'%>
+           <!--img src = "ant.png"-->
+         </marquee>
         <marquee direction="right" scrolldelay="170" width = "800"> <img src = "ant.png"> </marquee>
 
         <!-- Show Sentence =============-->
@@ -310,6 +322,16 @@
                         </div>
             </div>
 
+            <center>
+
+            <p>&nbsp;</p>
+
+
+                          <button type="button" class="button" onclick="PosWatch();">ヒアリを発見した！</button>
+
+            </center>
+
+
             <div id="watOut-area">
                 <div id="watOut-err-area">
                     </div>
@@ -333,7 +355,23 @@
 
 
             <!-- Show Comment Form =============-->
-            <font face = "Comic Sans MS" size="6">投稿してみよう！！！！？？？</font><br>
+
+        <center>
+        <p>&nbsp;</p>
+
+          <input type="button" value="ヒアリについて知りたい" onclick="location.href='https://sites.google.com/site/iussijapan/fireant'" style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:chocolate;color:white;">
+        </center>
+
+
+                <p>&nbsp;</p>
+                <font face = "Comic Sans MS" size="6">投稿してみよう！！</font><br>
+
+            <h5>ヒアリ防除システムとは？</h5>
+            <h2>ヒアリを発見を共有して、ヒアリの侵入状況を提供するシステムです。</h2>
+
+            <h5>登録しよう！</h5>
+            <h2>発見情報の登録は、誰でも利用できます。位置情報から発見場所、日時が自動的に登録できます。</h2>
+
 
             <!-- Show Input Buttons =============-->
             <h5>どこにいた？</h5>
