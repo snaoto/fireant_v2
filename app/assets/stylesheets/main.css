@@ -1,25 +1,68 @@
-
-
 button.button {
-    /* 文字サイズを1.4emに指定 */
-    font-size: 2.5em;
+  background-color: #333;
+  color: #fff;
+  font-size: 2.0em;
+  font-weight: bold;
+  /* 余白を指定 */
+  padding: 20px 200px;
+  /* 背景色を濃い青色に指定 */
+  background-color: #1fa67a;
+  /* 文字色を白色に指定 */
+  color: white;
+  /* ボーダーをなくす */
+  box-shadow: 0 3px 0 #0e8c73;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  border-style: none;
+  border-radius: 25px 25px;
+  -webkit-border-radius: 25px 25px;
+  -moz-border-radius: 25px 25px;
+}
+button.button:hover {
+  background-color:darkgrey;
+  font-size: 2.0em;
+  font-weight: bold;
+  /* 余白を指定 */
+  padding: 20px 200px;
+  /* 背景色を濃い青色に指定 */
+  border-style: none;
+  border-radius: 25px 25px;
+  -webkit-border-radius: 25px 25px;
+  -moz-border-radius: 25px 25px;
+}
+button.button:active {
+  top: 3px;
+  box-shadow: none;
+}
 
-    /* 文字の太さをboldに指定 */
-    font-weight: bold;
 
-    /* 余白を指定 */
-    padding: 20px 200px;
+ul {
+  padding: 0;
+}
 
-    /* 背景色を濃い青色に指定 */
-    background-color: chocolate;
 
-    /* 文字色を白色に指定 */
-    color: #fff;
+.color1 >ul li, ol li {
+  color: #404040;
+  font-size: 1.5em;
+  border-left: solid 4px #1fa67a;/*左側の線　*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.0;
+  padding: 2.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
+  width: 650px;
+}
 
-    /* ボーダーをなくす */
-    border-style: none;
- 
-    border-radius: 25px 25px;
-    -webkit-border-radius: 25px 25px;
-    -moz-border-radius: 25px 25px;
+
+.color2 >ul li, ol li {
+  color: #404040;
+  border-left: solid 6px #1fa67a;/*左側の線*/
+  border-bottom: solid 2px #dadada;/*下に灰色線*/
+  background: whitesmoke;
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.0;
+  padding: 1.5em;
+  list-style-type: none!important;/*ポチ消す*/
+  font-weight: bold;
 }
