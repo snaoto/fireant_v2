@@ -78,13 +78,18 @@
 
             function CreateMarker(argPos){
               markerParams['description'] = $("#description").val();
-
+　　　　　　　　　
               $.ajax({
                 url: '/users',
                 type: 'POST',
                 dataType: 'json',
                 data: {user:markerParams}
+
+
               })
+              // document.getElementById("description").style.visibility = "hidden";
+              // document.getElementById("description2").style.visibility = "hidden";
+              alert("送信が完了しました.　他の地点を登録する場合は赤いマーカーを動かして再度送信ボタンを押してください.");
             }
 
         //=========================================================
@@ -224,6 +229,7 @@
               markerParams = {latitude:ev.latLng.lat() , longitude:ev.latLng.lng()}
               });
             document.getElementById("goFetchPos").style.visibility = "hidden";
+
         }
         // ONLOADイベントにセット
         window.onload = init();
@@ -242,11 +248,11 @@
 　<p><br><h3>ヒアリの発見しましたか！？</h3>
 　　<br><h3>ヒアリマップでは、みなさんからのヒアリ発見情報を共有し<br>ヒアリの侵入状況を提供するシステムです。</h3></p>
  <p>&nbsp;</p><div id="color2"><ol>
-   <li>1.登録ボタンを押して位置情報へのアクセスを許可してください</li>
+   <li>1.現在地取得ボタンを押して位置情報へのアクセスを許可してください</li>
    <li>2.ドラッグで場所を訂正することができます</li> </ol></div>
 
      <p>&nbsp;</p> <div id="goFetchPos">
-       <button type="button" class="button" onclick="PosWatch()">ヒアリの情報を登録する</button>
+       <button type="button" class="button" onclick="PosWatch()">現在地を取得する</button>
      </div>
 
         <!-- Show Map =============-->
@@ -319,10 +325,10 @@
 
 　            <input type="text" class="hoge" id="description"></input>
               <p>&nbsp;</p>
-              <input onclick="CreateMarker();" class="botton" type="button" name="ok" value="送信">
-             </form>
+          <center>    <input id="description2" onclick="CreateMarker();" type="button" name="ok" value="送信">
+          </form></center>
 
-                  <p>&nbsp;</p><div id="color2"><ol>
+          <p>&nbsp;</p><div id="color2"><ol>
                 <ol><li>4.送信ボタンを押してください</li></ol></div>
 
   <center>
@@ -356,7 +362,8 @@
             <!-- Show Comment Form =============-->
 
 
-          <input type="button" class="button" value="ヒアリについて知りたい" onclick="location.href='https://sites.google.com/site/iussijapan/fireant'"
+          <input type="button" class="button" value="ヒアリについて知りたい"
+           onclick="location.href='https://sites.google.com/site/iussijapan/fireant'"
            style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:#1fa67a;color:white;">
 
 
