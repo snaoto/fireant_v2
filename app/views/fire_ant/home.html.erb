@@ -221,6 +221,7 @@
               // イベントの引数evの、プロパティ.latLngが緯度経度。
               document.getElementById('latitude').value = ev.latLng.lat();
               document.getElementById('longitude').value = ev.latLng.lng();
+              markerParams = {latitude:ev.latLng.lat() , longitude:ev.latLng.lng()}
               });
             document.getElementById("goFetchPos").style.visibility = "hidden";
         }
