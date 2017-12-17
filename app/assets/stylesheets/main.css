@@ -66,3 +66,7 @@ ul {
   list-style-type: none!important;/*ポチ消す*/
   font-weight: bold;
 }
+
+
+input.hoge { width: 55%;
+ }
