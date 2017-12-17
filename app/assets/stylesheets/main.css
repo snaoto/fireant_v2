@@ -65,7 +65,7 @@ ul {
   padding: 1.5em;
   list-style-type: none!important;/*ポチ消す*/
   font-weight: bold;
-  position:relative;left: 0%;
+  position:relative;left:1%;
 }
 
 
