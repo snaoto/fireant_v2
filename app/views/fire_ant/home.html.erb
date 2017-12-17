@@ -245,12 +245,11 @@
         <!-- 本文スタート =============-->
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
-　<p><br><h3>ヒアリの発見しましたか！？</h3>
-　　<br><h3>ヒアリマップでは、みなさんからのヒアリ発見情報を共有し<br>ヒアリの侵入状況を提供するシステムです。</h3></p>
-
-    <p>&nbsp;</p><p><br><h3>4つの手順で報告が完了します！</h3>
-   <p>&nbsp;</p><div id="color2">
-     <ol><li>1."位置情報を取得するボタンを押す</li></ol>
+　<p><br><h3><strong>ヒアリの発見しましたか！？</h3></strong></p>
+　　<h4>ヒアリマップでは、ヒアリ発見情報を報告できるシステムです。</h4>
+   <p><br><strong><h3>4つの手順で報告が完了します！</h3></strong></p>
+   <div id="color2">
+     <ol><li>1."位置情報を取得する"ボタンを押す</li></ol>
     <ol><li>2.地図上のマーカーをドラッグして場所を訂正する</li></ol>
     <ol><li>3.周辺環境やアリの数を教えてください</li></ol>
     <ol><li>4.送信ボタンをおす</li></ol>
@@ -324,26 +323,24 @@
 
 
             <!-- Show Input Buttons =============-->
-　　　　　　　　　  <center><h4>3. 周辺環境やアリの数を教えてください　　　　　　　　　　　　　　　</h4></center>
+　　　　　　　　　  <center><h4>3. 周辺環境やアリの数を教えてください</h4></center>
 　            <input type="text" class="hoge" id="description"></input>
-               <center><p>&nbsp;</p>
-            <input id="description2" onclick="CreateMarker();" type="button" name="ok" value="送信">
-          </form> 4.送信ボタンを押してください</center>
+               <p>&nbsp;</p>
+          <center>  <input id="description2" onclick="CreateMarker();" type="button" name="ok" value="送信"
+              style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:#1fa67a;color:white;">
+          </form> <h4>4.送信ボタンを押してください</h4></center>
 
-         <br><h3>ヒアリの説明ページへ移動します。</h3>
-        <input type="button" class="button" value="ヒアリについて知りたい方"
-          onclick="location.href='https://sites.google.com/site/iussijapan/fireant'"
+         <br><h4>ヒアリの説明ページへ移動します。</h4>
+         <input type="button"  class="button" value="ヒアリについて知りたい方"
+          onclick="window.open('https://sites.google.com/site/iussijapan/fireant','_blank');"
                 style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:#1fa67a;color:white;">
 
 </center>
 
-
+<marquee direction="right" width = "1000">
+<%= image_tag 'ant.png'%> </marquee>
 
   <center>
-            <label for="latitude">緯度</label>
-            <input type="text" id="latitude" size="20" />
-            <label for="longitude">経度</label>
-            <input type="text" id="longitude" size="20" />
 
             <div id="watOut-area">
                 <div id="watOut-err-area">
@@ -353,14 +350,14 @@
                 <div style="max-width:600px;margin:10px auto" id="watOut-ok-area">
                     <table class="tmTable" style="width:100%;margin-bottom:10px;">
                         <tbody>
-                            <tr><th colspan="2">情報</th><th>取得値</th><th>単位</th></tr>
-                            <tr><th rowspan="3">位置</th><td>緯度</td><td class="kekkaB" id="watLatitude"></td><td>度</td></tr>
-                            <tr><td>経度</td><td class="kekkaB" id="watLongitude"></td><td>度</td></tr>
-                            <tr><td>誤差</td><td class="kekkaB" id="watAccuracy"></td><td>m</td></tr>
-                            <tr><th rowspan="2">高さ</th><td>高度</td><td class="kekkaB" id="watAltitude"></td><td>m</td></tr>
-                            <tr><td>誤差</td><td class="kekkaB" id="watAltitudeAccuracy"></td><td>m</td></tr>
-                            <tr><th>向き</th><td>方角</td><td class="kekkaB" id="watHeading"></td><td>度</td></tr>
-                            <tr><th>移動</th><td>速度</td><td class="kekkaB" id="watSpeed"></td><td>m/s</td></tr>
+                            <tr style="display:none;"><th colspan="2">情報</th><th>取得値</th><th>単位</th></tr>
+                            <tr style="display:none;"><th rowspan="3">位置</th><td>緯度</td><td class="kekkaB" id="watLatitude"></td><td>度</td></tr>
+                            <tr style="display:none;"><td>経度</td><td class="kekkaB" id="watLongitude"></td><td>度</td></tr>
+                            <tr style="display:none;"><td>誤差</td><td class="kekkaB" id="watAccuracy"></td><td>m</td></tr>
+                            <tr style="display:none;"><th rowspan="2">高さ</th><td>高度</td><td class="kekkaB" id="watAltitude"></td><td>m</td></tr>
+                            <tr style="display:none;"><td>誤差</td><td class="kekkaB" id="watAltitudeAccuracy"></td><td>m</td></tr>
+                            <tr style="display:none;"><th>向き</th><td>方角</td><td class="kekkaB" id="watHeading"></td><td>度</td></tr>
+                            <tr style="display:none;"><th>移動</th><td>速度</td><td class="kekkaB" id="watSpeed"></td><td>m/s</td></tr>
                             <tr><td colspan="4" style="text-align:center" id="watDate"></td></tr>
                             <tr><td colspan="4" style="text-align:center"><div style="width:100%; height:320px;" id="watMap"></div></td></tr>
                         </tbody>
@@ -369,10 +366,11 @@
   </center>
             <!-- Show Comment Form =============-->
 
-       <marquee direction="right" width = "1000">
-       <%= image_tag 'ant.png'%>
-                   <!--img src = "ant.png"-->
-                 </marquee>
+
+                 <!-- <label for="latitude">緯度</label> -->
+                 <input style="display:none;" type="text" id="latitude" size="20" />
+                 <!-- <label for="longitude">経度</label> -->
+                 <input style="display:none;" type="text" id="longitude" size="20" />
 
 
 

@@ -18,7 +18,7 @@ button.button {
 
     /* ボーダーをなくす */
     border-style: none;
- 
+
     border-radius: 25px 25px;
     -webkit-border-radius: 25px 25px;
     -moz-border-radius: 25px 25px;
