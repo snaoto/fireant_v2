@@ -247,16 +247,21 @@
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 　<p><br><h3>ヒアリの発見しましたか！？</h3>
 　　<br><h3>ヒアリマップでは、みなさんからのヒアリ発見情報を共有し<br>ヒアリの侵入状況を提供するシステムです。</h3></p>
- <p>&nbsp;</p><div id="color2"><ol>
-   <li>1.現在地取得ボタンを押して位置情報へのアクセスを許可してください</li>
-   <li>2.ドラッグで場所を訂正することができます</li> </ol></div>
 
-     <p>&nbsp;</p> <div id="goFetchPos">
-       <button type="button" class="button" onclick="PosWatch()">現在地を取得する</button>
+    <p>&nbsp;</p><p><br><h3>4つの手順で報告が完了します！</h3>
+   <p>&nbsp;</p><div id="color2">
+     <ol><li>1."位置情報を取得するボタンを押す</li></ol>
+    <ol><li>2.地図上のマーカーをドラッグして場所を訂正する</li></ol>
+    <ol><li>3.周辺環境やアリの数を教えてください</li></ol>
+    <ol><li>4.送信ボタンをおす</li></ol>
+
+      <p>&nbsp;</p> <div id="goFetchPos">
+       <button type="button" class="button" onclick="PosWatch()">1.位置情報を取得する</button>
      </div>
-
+     <p><br><h4>2.赤色のマーカーを移動できます</h4></p>
         <!-- Show Map =============-->
-          <p>&nbsp;</p> <form>
+
+         <form>
                 <div id="map"></div>
                 <script>
                     var map;
@@ -312,24 +317,27 @@
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvTJh0c0yKakfJi0Ju2zPklH6Plv37P8&callback=initMap">
                     </script>
 
-
-            </div>
             <!--div class="PosWatButton">
                 <div id="goFetchPos">
                     <input value="現在地特定" onclick="PosWatch();" type="button">
                   </div-->
-        <p>&nbsp;</p><div id="color2"><ol>
-        <ol><li>3.周辺環境や個体数など補足情報も投稿できます</li></ol></div>
+
 
             <!-- Show Input Buttons =============-->
-
+　　　　　　　　　  <center><h4>3. 周辺環境やアリの数を教えてください　　　　　　　　　　　　　　　</h4></center>
 　            <input type="text" class="hoge" id="description"></input>
-              <p>&nbsp;</p>
-          <center>    <input id="description2" onclick="CreateMarker();" type="button" name="ok" value="送信">
-          </form></center>
+               <center><p>&nbsp;</p>
+            <input id="description2" onclick="CreateMarker();" type="button" name="ok" value="送信">
+          </form> 4.送信ボタンを押してください</center>
 
-          <p>&nbsp;</p><div id="color2"><ol>
-                <ol><li>4.送信ボタンを押してください</li></ol></div>
+         <br><h3>ヒアリの説明ページへ移動します。</h3>
+        <input type="button" class="button" value="ヒアリについて知りたい方"
+          onclick="location.href='https://sites.google.com/site/iussijapan/fireant'"
+                style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:#1fa67a;color:white;">
+
+</center>
+
+
 
   <center>
             <label for="latitude">緯度</label>
@@ -360,12 +368,6 @@
 
   </center>
             <!-- Show Comment Form =============-->
-
-
-          <input type="button" class="button" value="ヒアリについて知りたい"
-           onclick="location.href='https://sites.google.com/site/iussijapan/fireant'"
-           style="style= width: 70%; padding: 20px;font-size:20px;;border:2px ;background:#1fa67a;color:white;">
-
 
        <marquee direction="right" width = "1000">
        <%= image_tag 'ant.png'%>
